@@ -10,5 +10,5 @@ const client = new Client({
 });
 
 client.on("qr", qr => qrcode.generate(qr, { small: true }));
-client.on("ready", () => console.log("WhatsApp conectado!"));
+client.on("ready", () => console.log("✅ WhatsApp conectado com sucesso!"));
 client.initialize();
