@@ -1,12 +1,11 @@
 import { Client, LocalAuth } from "whatsapp-web.js";
 import qrcode from "qrcode-terminal";
 import { createClient } from "@supabase/supabase-js";
-import "dotenv/config";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY
-);
+const SUPABASE_URL = "https://shnhjbilqykqbvultwih.supabase.co";
+const SUPABASE_KEY = "sb_publishable_5cz6ObPo_kMZMB_X-yNipg_sXU3wp_F";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const client = new Client({
   authStrategy: new LocalAuth()
@@ -28,6 +27,7 @@ async function atualizarStatus(status, qr = null) {
 client.on("qr", async qr => {
   console.log("QR Code gerado:");
   qrcode.generate(qr, { small: true });
+
   await atualizarStatus("qr_gerado", qr);
 });
 
