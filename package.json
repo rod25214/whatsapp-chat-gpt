@@ -1,6 +1,10 @@
 {
   "name": "whatsapp-bot",
   "type": "module",
+  "scripts": {
+    "build": "bash render-build.sh",
+    "start": "node index.js"
+  },
   "dependencies": {
     "whatsapp-web.js": "^1.26.0",
     "qrcode-terminal": "^0.12.0"
