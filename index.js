@@ -21,8 +21,9 @@ wss.on("connection", ws => {
 });
 
 // Supabase
-const SUPABASE_URL = "SUA_URL";
-const SUPABASE_KEY = "SUA_ANON_PUBLIC_KEY"; // NÃO USE publishable
+const SUPABASE_URL = "https://shnhjbilqykqbvultwih.supabase.co";
+const SUPABASE_KEY = "sb_publishable_5cz6ObPo_kMZMB_X-yNipg_sXU3wp_F"; // NÃO USE publishable
+
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Atualiza Supabase + Frontend
